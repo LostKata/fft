@@ -1,4 +1,4 @@
-Download by pressing <Code> then press and download as Zip. 
+Download by pressing Code then press and download as Zip. 
 
 Prerequesites:
 Scipy
