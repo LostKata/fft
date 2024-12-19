@@ -12,4 +12,4 @@ use the command
 <path_to_audio_file> is just one of the .wav files
 
 Example of usage:
-python fft_analysis.py A1.wav
+<Code>python fft_analysis.py A1.wav</Code>
