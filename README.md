@@ -7,7 +7,7 @@ numpy
 
 How to run:
 use the command
-<Code>python fft_analysis.py <path_to_audio_file><Code/>
+<Code>python fft_analysis.py <path_to_audio_file></Code>
 
 <path_to_audio_file> is just one of the .wav files
 
