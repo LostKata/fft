@@ -19,17 +19,6 @@ def generate_maple_code(fft_frequencies, fft_magnitude, max_points=50, freq_limi
     reduced_frequencies = fft_frequencies[indices]
     reduced_magnitudes = fft_magnitude[indices]
 
-    # Convert to string format compatible with Maple
-    freq_list = ", ".join(f"{freq:.3f}" for freq in reduced_frequencies)
-    mag_list = ", ".join(f"{mag:.3f}" for mag in reduced_magnitudes)
-
-    maple_code = f"""
-with(plots):
-freqs := [{freq_list}]:
-magnitudes := [{mag_list}]:
-pointplot([seq([freqs[i], magnitudes[i]], i = 1..nops(freqs))], style=point, color=blue):
-"""
-    return maple_code
 
 def perform_fft(file_path):
     try:
@@ -67,12 +56,7 @@ def perform_fft(file_path):
             "fft_frequencies", fft_frequencies,
             "The corresponding frequencies for each FFT magnitude value.")
 
-        # Step 5: Generate and print Maple code
-        maple_code = generate_maple_code(fft_frequencies[:len(fft_frequencies)//2], fft_magnitude[:len(fft_magnitude)//2], freq_limit=400)
-        print("\nGenerated Maple Code:\n")
-        print(maple_code)
-
-        # Step 6: Visualize the result (limited to 400 Hz)
+       # Step 6: Visualize the result (limited to 400 Hz)
         plt.figure(figsize=(12, 6))
         within_limit = fft_frequencies[:len(fft_frequencies)//2] <= 400
         plt.plot(fft_frequencies[:len(fft_frequencies)//2][within_limit], fft_magnitude[:len(fft_magnitude)//2][within_limit])
